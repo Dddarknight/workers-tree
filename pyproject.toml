@@ -16,6 +16,7 @@ django-filter = "^22.1"
 django-htmx = "^1.12.2"
 crispy-bootstrap5 = "^0.7"
 Pillow = "^9.3.0"
+django-seed = "^0.3.1"
 
 [tool.poetry.dev-dependencies]
 coverage = "^6.5.0"
