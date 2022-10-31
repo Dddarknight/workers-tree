@@ -28,6 +28,7 @@ jobs:
         uses: paambaati/codeclimate-action@v2.7.5
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          POSTGRES_DB: employees
           CC_TEST_REPORTER_ID: ${{ secrets.TEST_REPORTER_ID_CODECLIMATE }}
         with:
           coverageCommand: make test-coverage
