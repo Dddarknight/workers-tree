@@ -29,7 +29,8 @@ class SignUpForm(UserCreationForm):
                                    attrs={'placeholder': 'Username',
                                           'autofocus': True,
                                           'class': 'form-control', }),
-                               error_messages={'unique': 'User already exists'})
+                               error_messages={
+                                'unique': 'User already exists'})
     password1 = forms.CharField(label='Password',
                                 label_suffix='',
                                 required=True,
@@ -51,7 +52,12 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = get_user_model()
         fields = (
-            'first_name', 'last_name', 'username', 'password1', 'password2', 'image')
+            'first_name',
+            'last_name',
+            'username',
+            'password1',
+            'password2',
+            'image')
 
 
 class LoginForm(AuthenticationForm):

@@ -9,7 +9,7 @@ from workers_tree.employees.utils import build_tree
 
 class IndexView(generic.TemplateView):
     template_name = 'index.html'
-    extra_context={'tree': build_tree()}
+    extra_context = {'tree': build_tree()}
 
 
 class EmployeesView(generic.TemplateView):
@@ -20,7 +20,8 @@ class EmployeesView(generic.TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(EmployeesView, self).get_context_data(**kwargs)
-        filter = EmployeeFilter(self.request.GET, queryset=self.get_queryset(**kwargs))
+        filter = EmployeeFilter(
+            self.request.GET, queryset=self.get_queryset(**kwargs))
         filter.form.helper = EmployeeFilterFormHelper()
         table = EmployeeTable(filter.qs)
         RequestConfig(self.request).configure(table)

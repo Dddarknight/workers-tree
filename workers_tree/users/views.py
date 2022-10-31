@@ -4,7 +4,6 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView, LogoutView
-from django.contrib.messages.views import SuccessMessageMixin
 from workers_tree.users.forms import SignUpForm, LoginForm
 from workers_tree.users.mixins import UserPermissionsMixin
 from workers_tree.users.mixins import UserFormLoginMixin

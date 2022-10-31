@@ -78,16 +78,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'NumericPasswordValidator',
     },
 ]
 
@@ -119,8 +123,6 @@ BOOTSTRAP4 = {
                      "OMm/tB9LTS58ONXgqbR9W8oWht/amnpF",
         "crossorigin": "anonymous",
     },
-
-    # "theme_url": "https://getbootstrap.com/docs/5.2/examples/product/product.css",
 
     "jquery_url": {
         "url": "https://code.jquery.com/jquery-3.5.1.min.js",
