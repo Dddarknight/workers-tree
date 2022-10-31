@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% bootstrap_messages %}
+
+{% block content %}
+    <h1>
+        Delete user
+    </h1>
+    <br>
+    <div>
+        <p>Are you sure you want to delete {{ object }} ?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-info"> Delete </button>
+        </form>
+    </div>
+{% endblock content %}

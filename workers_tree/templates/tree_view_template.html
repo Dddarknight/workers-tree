@@ -1,0 +1,13 @@
+<li class="parent_li">
+    <span class="indent"></span>
+    {{node.name}}
+        <ul>
+            {%if node.employees %}
+                {%for employee in node.employees %}
+                {%with node=employee template_name="tree_view_template.html" %}
+                    {%include template_name%}
+                {%endwith%}
+                {%endfor%}
+            {%endif%}
+        </ul>
+</li>

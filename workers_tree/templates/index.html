@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% bootstrap_messages %}
+
+{% block content %}
+<div id="tree" class="tree">
+    <ul>
+    {%for node in tree %} 
+        {%include "tree_view_template.html" %}
+    {%endfor%}
+    </ul>
+</div>
+{% endblock content %}
