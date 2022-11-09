@@ -20,7 +20,7 @@ class UserPassesTestMixin_(UserPassesTestMixin):
         return True
 
     def handle_no_permission(request):
-        return redirect(reverse_lazy('users'))
+        return redirect('/')
 
 
 class UserPermissionsMixin(LoginRequiredMixin, UserPassesTestMixin_):

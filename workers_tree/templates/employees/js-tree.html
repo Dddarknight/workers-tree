@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% bootstrap_javascript jquery='full' %}
+
+{% bootstrap_messages %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+
+<script>
+    $(function() {
+        $.ajax({
+            async : true,
+            type : "GET",
+            url : "/employees/js-tree",
+            dataType : "json",    
+
+            success : function(json) {
+                createJSTrees(json);
+            },    
+
+            error : function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+            }
+        });
+    });    
+
+    function createJSTrees(jsonData) {
+        console.log(jsonData);
+        $("#jstree").jstree({
+            "core" : {
+                data : jsonData
+            },
+            "types": {
+                "default" : {
+                    "icon" : "glyphicon glyphicon-th"
+                }
+            },
+            plugins: ["search", "themes", "types"]
+            });
+    }
+</script>
+ <div id="jstree"></div>
+{% endblock content %}

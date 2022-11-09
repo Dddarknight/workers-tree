@@ -256,6 +256,17 @@ python-versions = ">=3.6"
 pyparsing = ">=2.0.2,<3.0.5 || >3.0.5"
 
 [[package]]
+name = "parameterized"
+version = "0.8.1"
+description = "Parameterized testing with any Python test framework"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.extras]
+dev = ["jinja2"]
+
+[[package]]
 name = "pillow"
 version = "9.3.0"
 description = "Python Imaging Library (Fork)"
@@ -407,7 +418,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<4"
-content-hash = "3f98b836cc13d8e915a29c9d8a097fcec62c5ef897fac9c5cfb58ad1d4bcd274"
+content-hash = "ad5084533b24fc40de293ddf671d4664f1054be658af55d7658de33663d1b2ef"
 
 [metadata.files]
 asgiref = []
@@ -432,6 +443,7 @@ flake8 = []
 iniconfig = []
 mccabe = []
 packaging = []
+parameterized = []
 pillow = []
 pluggy = []
 psycopg2 = []

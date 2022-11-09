@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Full name</th>
+            <th scope="col">Job title</th>
+            <th scope="col">Employment date</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Manager</th>
+            <th scope="col">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td> {{ employee }} </td>
+                <td> {{ employee.job_title}} </td>
+                <td> {{ employee.employment_date }} </td>
+                <td> {{ employee.salary }} </td>
+                <td> {{ employee.manager }} </td>
+                <td>
+                    <a href="{{ employee.get_absolute_url }}"> Change </a>
+                </td>
+            </tr>
+            {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,4 +1,8 @@
-<li class="parent_li">
+{% load static %}
+
+
+<script src={% static 'main.js' %} defer></script>
+<li class="tree-node">
     <span class="indent"></span>
     {{node.name}}
         <ul>

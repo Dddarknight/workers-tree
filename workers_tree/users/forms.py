@@ -47,7 +47,9 @@ class SignUpForm(UserCreationForm):
                                     attrs={
                                         'placeholder': 'Confirm password',
                                         'class': 'form-control', }))
-    image = forms.ImageField()
+    image = forms.ImageField(label='Image',
+                             label_suffix='',
+                             required=False)
 
     class Meta:
         model = get_user_model()

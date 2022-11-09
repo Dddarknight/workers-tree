@@ -37,7 +37,7 @@ class UserUpdateView(UserPermissionsMixin,
     model = get_user_model()
     template_name = 'users/update.html'
     form_class = SignUpForm
-    success_url = reverse_lazy('/')
+    success_url = '/'
     success_message = UPDATE_USER_SUCCESS_MESSAGE
     login_url = reverse_lazy('login')
     redirect_field_name = None
@@ -48,7 +48,7 @@ class UserDeleteView(UserPermissionsMixin,
                      DeleteView):
     model = get_user_model()
     template_name = 'users/delete.html'
-    success_url = reverse_lazy('/')
+    success_url = '/'
     success_message = DELETE_SUCCESS_MESSAGE
 
 

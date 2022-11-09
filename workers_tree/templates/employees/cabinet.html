@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="d-flex justify-content-start align-items-start align-content-start bg-light border" style="width: 700px;">
+    <div class="row">
+        <div class="col" style="max-width: fit-content;">
+            <img src={{image_url}} />
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col" style="background: rgb(183, 180, 193); min-width: 200px;">
+                    Full name
+                </div>
+                <div class="col">
+                    {{user}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"  style="background: rgb(183, 180, 193); min-width: 200px;">
+                    Job title
+                </div>
+                <div class="col">
+                    {{employee.job_title}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="background: rgb(183, 180, 193); min-width: 200px;">
+                    Salary
+                </div>
+                <div class="col">
+                    {{employee.salary}}
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col" style="background: rgb(183, 180, 193); min-width: 200px;">
+                    Manager
+                </div>
+                <div class="col">
+                    {{employee.manager}}
+                </div>
+            </div> 
+            {% if employees %}
+            <div class="row">
+                <div class="col" style="background: rgb(183, 180, 193); min-width: 200px;">
+                    <a href="management">
+                        My employees
+                    </a>
+                </div>
+                <div class="col text-center">
+                    {% for e in employees %}
+                        <div class="text-sm-left">
+                            <a href="{{ e.get_absolute_url }}">
+                            {{e.user}}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

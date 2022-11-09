@@ -7,10 +7,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
-    path('employees/', views.EmployeesView.as_view(), name='employees'),
     path('users/', include('workers_tree.users.urls')),
+    path('employees/', include('workers_tree.employees.urls')),
     path('admin/', admin.site.urls),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

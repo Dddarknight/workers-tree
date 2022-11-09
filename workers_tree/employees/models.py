@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.urls import reverse_lazy
 
 
 class Employee(models.Model):
@@ -18,3 +19,7 @@ class Employee(models.Model):
 
     def name(self):
         return self.user.get_full_name()
+
+    def get_absolute_url(self):
+        url = reverse_lazy('employees')
+        return f'{url}{self.id}'

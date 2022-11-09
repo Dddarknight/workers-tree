@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% load bootstrap4 %}
+{% load static %}
 
-{% bootstrap_css %}
+<!-- {% bootstrap_css %} -->
 {% bootstrap_javascript jquery='full' %}
 
 {% bootstrap_messages %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
 <div id="tree" class="tree">
     <ul>
     {%for node in tree %} 

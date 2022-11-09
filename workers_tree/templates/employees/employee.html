@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="d-flex justify-content-start align-items-start align-content-start bg-light border" style="width: 700px;">
+    <div class="row">
+        <div class="col" style="max-width: fit-content;">
+            <img src={{image_url}} />
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col" style="min-width: 200px;">
+                    Full name
+                </div>
+                <div class="col">
+                    {{user}}
+                </div>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    {{ field.label_tag }}
+                    <br>
+                    {{ field }}
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                        <small class="text-danger">{% translate error %}</small>
+                        <br>
+                        {% endfor %}
+                    {% else %}
+                        <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                    <br>
+                {% endfor %}
+                <button type="submit" class="btn btn-info btn-lg"> Update </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
