@@ -19,7 +19,9 @@ EMPLOYEE_UPDATE_SUCCESS_MESSAGE = "Employee was updated successfully"
 
 class IndexView(generic.TemplateView):
     template_name = 'index.html'
-    extra_context = {'tree': build_tree()}
+    heads = Employee.objects.filter(manager__isnull=True)
+    tree = build_tree(heads)
+    extra_context = {'tree': tree}
 
 
 class TreeView(generic.TemplateView):

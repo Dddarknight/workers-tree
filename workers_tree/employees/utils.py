@@ -1,7 +1,7 @@
 from workers_tree.employees.models import Employee
 
 
-def build_tree():
+def build_tree(heads):
     def get_workers(head):
         employees = []
         query = Employee.objects.filter(manager=head)
@@ -16,7 +16,6 @@ def build_tree():
             employees.append(node)
         return employees
 
-    heads = Employee.objects.filter(manager__isnull=True)
     tree = []
     for head in heads:
         node = {'name': head.name(),
