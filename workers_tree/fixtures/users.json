@@ -11,6 +11,23 @@
         "last_name": "Green",
         "username": "bobgreen",
         "password": "*aaaccc5"
+      },
+      "user3": {
+        "first_name": "Jack",
+        "last_name": "Stone",
+        "username": "jackstone",
+        "password": "*aaaccc6"
+      },
+      "user4": {
+        "first_name": "Rick",
+        "last_name": "White",
+        "username": "rickwhite",
+        "password": "*aaaccc7"
+      },
+      "user5": {
+        "first_name": "Etan",
+        "last_name": "Yellow",
+        "username": "etanyellow",
+        "password": "*aaaccc1"
       }
-    }
   }
