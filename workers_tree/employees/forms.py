@@ -23,7 +23,6 @@ class EmployeeUpdateForm(forms.ModelForm):
             attrs={'style': 'min-height: 50px;', }),
         queryset=Employee.objects.all())
 
-
     class Meta:
         model = Employee
         fields = (

@@ -24,6 +24,7 @@ def get_fixture_data(file_name):
 def get_test_data(file_name):
     return get_fixture_data(file_name)
 
+
 def get_picture(file_name):
     file_path = get_fixture_path(file_name)
     with open(file_path, 'rb') as file:
