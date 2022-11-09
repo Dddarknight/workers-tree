@@ -1,9 +1,9 @@
 # Workers-tree
 The app provides oppotunities:
 - to show the full hierarchical tree of company's employees,
-| Django example | JS-tree example |
-|----------|---------|
-| ![Django](workers_tree/examples/django_example.png) |  ![JS](workers_tree/examples/js_tree_example.png) |
+
+| ![Django](workers_tree/examples/django_example.png "Django example") |  ![JS](workers_tree/examples/js_tree_example.png "js-tree example") |
+
 - to see all the information about employees for the registered users with filtering.
 User profile also includes the user's /the employee's photos.
 
