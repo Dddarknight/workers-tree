@@ -11,8 +11,8 @@ from workers_tree.employees.filter import EmployeeFilterFormHelper
 from workers_tree.employees.tables import EmployeeTable
 
 
-CHANGE_EMPLOYEE_DENIED_MESSAGE = "You can't change employee"
-                                 " from another division"
+CHANGE_EMPLOYEE_DENIED_MESSAGE = (
+    "You can't change employee from another division")
 NOT_LOGGED_IN_MESSAGE = "You need to log in"
 
 
