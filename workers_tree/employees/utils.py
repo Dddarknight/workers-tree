@@ -19,7 +19,7 @@ def build_tree():
     heads = Employee.objects.filter(manager__isnull=True)
     tree = []
     for head in heads:
-        node = {'id': head.user.first_name,
+        node = {'name': head.name(),
                 'job_title': head.job_title,
                 'employment_date': head.employment_date,
                 'salary': head.salary,
