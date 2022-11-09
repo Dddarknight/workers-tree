@@ -37,7 +37,8 @@ class EmployeeModelTest(TestCase):
         self.assertEqual(
             self.employee.job_title, self.employee_data['job_title'])
         self.assertEqual(
-            self.employee.employment_date, self.employee_data['employment_date'])
+            self.employee.employment_date,
+            self.employee_data['employment_date'])
         self.assertEqual(
             self.employee.salary, self.employee_data['salary'])
         self.assertEqual(
