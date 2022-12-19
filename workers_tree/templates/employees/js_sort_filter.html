@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table class="table table-striped" id="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Job Title</th>
+                <th scope="col">Employment date</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Manager</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for employee in object_list %}
+                <tr>
+                    <td>{{ employee.user }}</td>
+                    <td>{{ employee.job_title }}</td>
+                    <td>{{ employee.employment_date}}</td>
+                    <td>{{ employee.salary }}</td>
+                    <td>{{ employee.manager }}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        
+        window.Flags = new Map();
+        table.onclick = function(e) {
+          if (e.target.tagName != 'TH') return;
+          let th = e.target;
+          sortTable(th.cellIndex);
+        };
+
+        function sortTable(colNum) {
+          let tbody = table.querySelector('tbody');
+          let rowsArray = Array.from(tbody.rows);
+          let compare = function(rowA, rowB) {
+            let type = 'string';
+            let number = Number(rowA.cells[colNum].innerHTML);
+            let x = rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML;
+            if (number) {
+              type = 'number';
+              x = Number(rowA.cells[colNum].innerHTML) > Number(rowB.cells[colNum].innerHTML);
+            } else {
+              let date1 = new Date(rowA.cells[colNum].innerHTML);
+              if (date1 instanceof Date && !isNaN(date1)) {
+                console.log(date1);
+                type = 'date';
+                date2 = new Date(rowB.cells[colNum].innerHTML);
+                x = date1 > date2;
+              };
+            };
+            if (Flags.get(colNum)) {
+              return x ? Flags.get(colNum) : -Flags.get(colNum);
+            } else {
+              return x ? 1 : -1;
+            };
+          };
+          rowsArray.sort(compare);
+          if (Flags.get(colNum)) {
+              Flags.set(colNum, -Flags.get(colNum));
+            } else {
+              Flags.set(colNum, -1);
+            };
+          tbody.append(...rowsArray);
+        }
+    </script>
+{% endblock %}

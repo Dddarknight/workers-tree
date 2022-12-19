@@ -15,4 +15,5 @@ urlpatterns = [
     path('<int:pk>',
          views.EmployeeUpdateView.as_view(),
          name='update-employee'),
+    path('js', views.JsEmployeesView.as_view(), name='js-employees'),
 ]

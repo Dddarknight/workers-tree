@@ -13,15 +13,19 @@ from workers_tree.employees.forms import EmployeeUpdateForm
 from workers_tree.employees.utils import build_tree, build_js_tree
 from django.http import JsonResponse
 
+from django.http import HttpResponse
+from django.template import loader
+
 
 EMPLOYEE_UPDATE_SUCCESS_MESSAGE = "Employee was updated successfully"
 
 
-class IndexView(generic.TemplateView):
-    template_name = 'index.html'
+def index(request):
+    template = loader.get_template('index.html')
     heads = Employee.objects.filter(manager__isnull=True)
     tree = build_tree(heads)
-    extra_context = {'tree': tree}
+    context = {'tree': tree}
+    return HttpResponse(template.render(context, request))
 
 
 class TreeView(generic.TemplateView):
@@ -57,3 +61,8 @@ class EmployeeUpdateView(EmployeeUpdateMixin,
     success_message = EMPLOYEE_UPDATE_SUCCESS_MESSAGE
     login_url = reverse_lazy('login')
     redirect_field_name = None
+
+
+class JsEmployeesView(generic.ListView):
+    template_name = "employees/js_sort_filter.html"
+    model = Employee
