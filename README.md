@@ -7,6 +7,8 @@ The app provides oppotunities:
 - to see all the information about employees for the registered users with filtering.
 User profile also includes the user's /the employee's photos.
 
+App example is [deployed](http://workers-env.eba-eccv5mpu.us-west-2.elasticbeanstalk.com/) with AWS Elastic Beanstalk.
+
 ### CodeClimate and CI status
 <a href="https://codeclimate.com/github/Dddarknight/workers-tree/maintainability"><img src="https://api.codeclimate.com/v1/badges/9b8bd7b1fdc3d62a0ca7/maintainability" /></a> <a href="https://codeclimate.com/github/Dddarknight/workers-tree/test_coverage"><img src="https://api.codeclimate.com/v1/badges/9b8bd7b1fdc3d62a0ca7/test_coverage" /></a> [![Python CI](https://github.com/Dddarknight/workers-tree/actions/workflows/pyci.yml/badge.svg)](https://github.com/Dddarknight/workers-tree/actions)
 
