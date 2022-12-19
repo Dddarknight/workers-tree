@@ -41,6 +41,8 @@ class PersonalCabinetMixin:
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         employee = self.get_queryset(**kwargs)
+        if not employee:
+            return context
         user = get_user_model().objects.get(employee=employee)
         image_url = user.image.url
         employees = Employee.objects.filter(manager=employee)

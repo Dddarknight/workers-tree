@@ -2,6 +2,11 @@
 {% load i18n %}
 
 {% block content %}
+{% if not employee %}
+<h3>
+    You are not registered as an employee.
+</h3>
+{% else %}
 <div class="d-flex justify-content-start align-items-start align-content-start bg-light border" style="width: 700px;">
     <div class="row">
         <div class="col" style="max-width: fit-content;">
