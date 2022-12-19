@@ -11,7 +11,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['workers-env.eba-eccv5mpu.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = [
+    'workers-env.eba-eccv5mpu.us-west-2.elasticbeanstalk.com', '35.83.44.150'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -71,7 +73,18 @@ SQLITE_SETTINGS = {
     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 }
 
-if os.getenv('DB_ENGINE') == 'SQLite':
+if 'RDS_DB_NAME' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('RDS_DB_NAME'),
+            'USER': os.getenv('RDS_USERNAME'),
+            'PASSWORD': os.getenv('RDS_PASSWORD'),
+            'HOST': os.getenv('RDS_HOSTNAME'),
+            'PORT': os.getenv('RDS_PORT'),
+        },
+    }
+elif os.getenv('DB_ENGINE') == 'SQLite':
     DATABASES = {'default': SQLITE_SETTINGS}
 else:
     DATABASES = {
