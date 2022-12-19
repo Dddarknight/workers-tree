@@ -5,10 +5,10 @@ description = ""
 authors = ["Dddarknight <9801677@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<4"
+python = ">=3.7"
 python-dotenv = "^0.21.0"
 dj-database-url = "^1.0.0"
-Django = "^4.1.2"
+django = "^3.2.16"
 django-bootstrap4 = "^22.2"
 django-crispy-forms = "^1.14.0"
 django-tables2 = "^2.4.1"
@@ -17,7 +17,13 @@ django-htmx = "^1.12.2"
 crispy-bootstrap5 = "^0.7"
 Pillow = "^9.3.0"
 django-seed = "^0.3.1"
-psycopg2 = "^2.9.5"
+psycopg2-binary = "^2.9.5"
+EB = "^0.1.5"
+awsebcli = "^3.20.3"
+blessed = "^1.19.1"
+docker-compose = "1.25.2"
+gunicorn = "^20.1.0"
+django-debug-toolbar = "^3.8.1"
 
 [tool.poetry.dev-dependencies]
 coverage = "^6.5.0"
