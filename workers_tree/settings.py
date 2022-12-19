@@ -12,7 +12,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'workers-env.eba-eccv5mpu.us-west-2.elasticbeanstalk.com', '35.83.44.150'
+    'workers-env.eba-eccv5mpu.us-west-2.elasticbeanstalk.com',
+    '35.83.44.150',
+    '127.0.0.1',
 ]
 
 INSTALLED_APPS = [
